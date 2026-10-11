@@ -3,6 +3,8 @@ import multer from 'multer';
 import crypto from 'node:crypto';
 import { getSetting, setSetting, addNote, addReference, dropReference, getPost, markNoteUsed, updatePost } from './data.js';
 import { getMedia, saveMedia, mediaUrl } from './storage.js';
+import { launchBrowser, renderCarousel } from './render.js';
+import { q } from './pg.js';
 import { safeEqual, verify } from './sign.js';
 import { escapeHtml, need } from './util.js';
 
@@ -79,8 +81,37 @@ export function createApp() {
   });
 
   // ---- Kill switch: /c/pause and /c/resume (signed links, 30 days). GET confirms, POST acts.
-  const controlOk = (req) => ['pause', 'resume'].includes(req.params.action) && verify(req.params.action, 'engine', req.query.exp ?? req.body?.exp, req.query.sig ?? req.body?.sig);
+  const controlOk = (req) => ['pause', 'resume', 'selftest'].includes(req.params.action) && verify(req.params.action, 'engine', req.query.exp ?? req.body?.exp, req.query.sig ?? req.body?.sig);
   const stateLine = async () => ((await getSetting('paused', false)) === true ? 'Publishing is currently <strong>PAUSED</strong>.' : 'Publishing is currently <strong>running</strong>.');
+  // Health check you can click: environment, database, and a real slide render (Chrome + fonts).
+  app.get('/c/selftest', async (req, res) => {
+    if (!verify('selftest', 'engine', req.query.exp, req.query.sig)) return res.status(403).type('text').send('Link invalid or expired');
+    const lines = [];
+    const step = async (name, fn) => {
+      const t = Date.now();
+      try {
+        lines.push(`PASS  ${name}${(await fn()) ?? ''} (${Date.now() - t} ms)`);
+      } catch (e) {
+        lines.push(`FAIL  ${name}: ${e.message}`);
+      }
+    };
+    const vars = ['ANTHROPIC_API_KEY', 'CLAUDE_MODEL', 'DATABASE_URL', 'GMAIL_USER', 'GMAIL_APP_PASSWORD', 'NOTES_PASSWORD', 'APPROVAL_SECRET', 'BASE_URL', 'IG_USER_ID', 'IG_ACCESS_TOKEN'];
+    lines.push('Variables set: ' + vars.map((v) => `${v}=${process.env[v] ? 'yes' : 'NO'}`).join(', '));
+    lines.push(`BASE_URL is ${process.env.BASE_URL || '(missing)'}`);
+    await step('database', async () => ` ${(await q('select count(*)::int as n from reference_posts'))[0].n} example posts`);
+    await step('slide rendering (Chrome + fonts)', async () => {
+      const browser = await launchBrowser();
+      try {
+        const post = { pillar: 'TOOL', variant: { cta_type: 'starter' }, slides: [{ type: 'COVER_TYPE', headline: 'Self *test*', body: '', items: [], stat: 'CHECK', mascot: null }, { type: 'CTA', headline: 'All *good*', body: '', items: [], stat: null, mascot: null }] };
+        const out = await renderCarousel(post, { browser });
+        return ` ${out.length} slides, ${Math.round(out[0].jpeg.length / 1024)} KB`;
+      } finally {
+        await browser.close();
+      }
+    });
+    res.type('text').send(lines.join('\n'));
+  });
+
   app.get('/c/:action', async (req, res) => {
     if (!controlOk(req)) return res.status(403).send(page('Link invalid', '<h1>Link invalid or expired</h1>'));
     const pausing = req.params.action === 'pause';
