@@ -162,5 +162,11 @@ export function createApp() {
     });
   });
 
+  // Log every unexpected error (Express stays silent about them in production) and answer plainly.
+  app.use((err, req, res, _next) => {
+    console.error(`[error] ${req.method} ${req.path}:`, err.message);
+    res.status(500).type('text').send('Server error. The cause is in the Railway deploy logs.');
+  });
+
   return app;
 }

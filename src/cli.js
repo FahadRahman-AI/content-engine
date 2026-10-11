@@ -26,6 +26,9 @@ try {
     console.log(r.refreshed ? 'token refreshed' : 'token still fresh', '- expires', r.expiry.toISOString());
   } else if (cmd === 'serve') {
     const port = process.env.PORT || 3000;
+    const required = ['DATABASE_URL', 'ANTHROPIC_API_KEY', 'CLAUDE_MODEL', 'APPROVAL_SECRET', 'BASE_URL', 'GMAIL_USER', 'GMAIL_APP_PASSWORD', 'NOTES_PASSWORD'];
+    const missing = required.filter((v) => !process.env[v]);
+    if (missing.length) console.warn(`WARNING: these settings are missing: ${missing.join(', ')}`);
     createApp().listen(port, () => console.log(`listening on ${port}`));
     // The schedule runs on Railway automatically; locally, set ENABLE_CRON=true to turn it on.
     if (process.env.RAILWAY_ENVIRONMENT || process.env.ENABLE_CRON === 'true') startScheduler();
