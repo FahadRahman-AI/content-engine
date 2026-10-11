@@ -5,7 +5,9 @@ ENV NODE_ENV=production \
     PUPPETEER_CACHE_DIR=/app/.cache/puppeteer
 
 COPY package*.json ./
-RUN npm ci --omit=dev \
+# Skip puppeteer's own download here; Chrome is installed once, explicitly, below.
+RUN PUPPETEER_SKIP_DOWNLOAD=true npm ci --omit=dev
+RUN apt-get update \
  && npx puppeteer browsers install chrome --install-deps \
  && rm -rf /var/lib/apt/lists/*
 
