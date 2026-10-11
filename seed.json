@@ -1,0 +1,118 @@
+[
+  {
+    "pillar": "HABITS",
+    "topic_key": "habits-that-keep-you-at-zero",
+    "hook": "Habits that keep you at $0 (asking for a friend)",
+    "slides": [
+      { "type": "COVER_MASCOT", "headline": "Habits that keep you at *$0*", "body": "Asking for a friend. The friend is very sure the plan is working.", "items": [], "stat": null, "mascot": "smug" },
+      { "type": "LIST", "headline": "Building before *asking*", "body": "", "items": ["A dashboard nobody requested", "Zero conversations with a buyer", "Launch post: \"excited to share\""], "stat": null, "mascot": "sweat" },
+      { "type": "STEP", "headline": "Rebuilding the stack every *Monday*", "body": "New framework, new UI kit, same empty inbox. The tool was never the bottleneck.", "items": [], "stat": null, "mascot": null },
+      { "type": "STEP", "headline": "Polishing the logo, not the *offer*", "body": "Nobody buys a gradient. They buy a clear answer to \"what do I get and what does it cost\".", "items": [], "stat": null, "mascot": null },
+      { "type": "STEP", "headline": "Pricing by *vibes*", "body": "Picking a number that feels safe instead of asking three people what they would actually pay.", "items": [], "stat": null, "mascot": null },
+      { "type": "COMPARE", "headline": "How it feels vs what it *is*", "body": "", "items": ["\"Almost ready\" | Not shipped", "\"Building in public\" | Posting screenshots", "\"Waiting for the right moment\" | Avoiding the DMs"], "stat": "HOW IT FEELS | WHAT IT IS", "mascot": null },
+      { "type": "QUOTE", "headline": "Shipping ugly beats polishing *invisible*.", "body": "Forward Thinking Co", "items": [], "stat": null, "mascot": null },
+      { "type": "CTA", "headline": "Get to your first *yes* faster", "body": "The starter pack is the checklist these slides wish they'd had.", "items": [], "stat": null, "mascot": null }
+    ],
+    "caption": "Every habit on this list feels productive while you're doing it. That's the problem.\n\nRebuilding the stack, polishing the logo, waiting for the right moment. None of it puts the offer in front of a person who could say yes.\n\nPick one habit from this list and drop it this week. Just one.\n\nFree starter pack, link in bio →",
+    "hashtags": ["#buildinpublic", "#solofounder", "#indiehacker", "#aitools", "#startup"],
+    "source_url": null,
+    "note_id": null,
+    "variant": { "cover_type": "COVER_MASCOT", "hook_style": "self-roast", "slide_count": 8, "cta_type": "starter", "mascot_used": true }
+  },
+  {
+    "pillar": "SAVEABLE",
+    "topic_key": "brief-claude-code-like-a-client",
+    "hook": "Brief Claude Code like a client would brief you",
+    "slides": [
+      { "type": "COVER_GRADIENT", "headline": "Brief Claude Code like a *client* would", "body": "", "items": [], "stat": "PROMPT TEMPLATE / SAVE THIS", "mascot": null },
+      { "type": "STEP", "headline": "Say who it's *for*", "body": "One sentence: the visitor, what they already tried, and what they want next. Vague audience, vague page.", "items": [], "stat": null, "mascot": null },
+      { "type": "STEP", "headline": "List the sections in *order*", "body": "Hero, proof, how it works, offer, FAQ, CTA. Order is a decision. Don't let the model make it for you.", "items": [], "stat": null, "mascot": null },
+      { "type": "STEP", "headline": "Paste the *real* copy", "body": "Placeholder text produces placeholder layouts. Give it the actual headline and the actual price, even if rough.", "items": [], "stat": null, "mascot": null },
+      { "type": "STEP", "headline": "Write the visual *rules* down", "body": "Two fonts, a few colours, a spacing scale, one accent. Keep them in a file the agent reads every session.", "items": [], "stat": null, "mascot": null },
+      { "type": "LIST", "headline": "The *template*", "body": "", "items": ["AUDIENCE: who, and what they tried", "SECTIONS: in order, one line each", "COPY: real headline, real offer", "RULES: fonts, colours, spacing", "DONE WHEN: it works at 375px wide"], "stat": null, "mascot": null },
+      { "type": "CTA", "headline": "Want the full *brief* file?", "body": "It's in the starter pack, ready to paste.", "items": [], "stat": null, "mascot": null }
+    ],
+    "caption": "Most \"AI built me a generic site\" problems are briefing problems.\n\nIf you'd hand a human designer a one-line request and expect a great page, you'd be disappointed there too. Give the agent what a good client gives you: who it's for, the sections in order, the real copy, and the visual rules.\n\nSave this for your next build.\n\nFree starter pack, link in bio →",
+    "hashtags": ["#claudecode", "#aitools", "#webdesign", "#landingpage", "#buildwithai", "#solofounder"],
+    "source_url": null,
+    "note_id": null,
+    "variant": { "cover_type": "COVER_GRADIENT", "hook_style": "how-to", "slide_count": 7, "cta_type": "starter", "mascot_used": false }
+  },
+  {
+    "pillar": "TEARDOWN",
+    "topic_key": "teardown-this-content-engine",
+    "hook": "This carousel was written by a cron job",
+    "slides": [
+      { "type": "COVER_TYPE", "headline": "This carousel was written by a cron *job*", "body": "A teardown of the engine behind this page, and the human who still has to press approve.", "items": [], "stat": "TEARDOWN / THIS ENGINE", "mascot": null },
+      { "type": "STEP", "headline": "21:00: research and *draft*", "body": "Claude picks the day's pillar, searches for sources, and drafts 6 to 8 slides against a written brand brief.", "items": [], "stat": null, "mascot": null },
+      { "type": "STEP", "headline": "A second call *fact-checks* it", "body": "Every claim must trace to a source or a real note. Fail twice and the day is skipped. No filler posts.", "items": [], "stat": null, "mascot": null },
+      { "type": "STEP", "headline": "Puppeteer renders the *slides*", "body": "HTML templates and one shared token file, exported as 1080 by 1350 JPEGs.", "items": [], "stat": null, "mascot": null },
+      { "type": "STEP", "headline": "A human *approves* it", "body": "An email with the slides and approve or reject links. Rejections carry a note the next draft reads.", "items": [], "stat": null, "mascot": null },
+      { "type": "STEP", "headline": "07:00: it *publishes*", "body": "Through Instagram's API. Then it pulls saves, shares and comments at 48 hours and again at 7 days.", "items": [], "stat": null, "mascot": null },
+      { "type": "STAT", "headline": "Proven formats vs one *experiment*", "body": "30% of posts change exactly one thing: cover, hook style, length or CTA.", "items": [], "stat": "70/30", "mascot": null },
+      { "type": "CTA", "headline": "Steal the *setup*", "body": "The starter pack has the brief template this engine runs on.", "items": [], "stat": null, "mascot": null }
+    ],
+    "caption": "Yes, this post was drafted by a script. No, it didn't post itself without a human looking at it.\n\nThe engine: research and draft at 21:00, a separate fact-check pass, HTML templates rendered to images, an approval email, then publishing at 07:00. Afterwards it reads saves, shares and comments and tests one change at a time.\n\nThe goal isn't more posts. It's fewer bad ones.\n\nFree starter pack, link in bio →",
+    "hashtags": ["#claudecode", "#automation", "#buildinpublic", "#aitools", "#contentsystems"],
+    "source_url": null,
+    "note_id": null,
+    "variant": { "cover_type": "COVER_TYPE", "hook_style": "curiosity", "slide_count": 8, "cta_type": "starter", "mascot_used": false }
+  },
+  {
+    "pillar": "TEARDOWN",
+    "topic_key": "teardown-launch-landing-page",
+    "hook": "What actually goes into a launch landing page",
+    "slides": [
+      { "type": "COVER_TYPE", "headline": "What actually goes into a launch *landing* page", "body": "", "items": [], "stat": "TEARDOWN / LAUNCH PAGE", "mascot": null },
+      { "type": "STEP", "headline": "Start with the *one* action", "body": "Book a call, join a waitlist, or buy. One page, one job. Everything else is decoration.", "items": [], "stat": null, "mascot": null },
+      { "type": "STEP", "headline": "Write before you *design*", "body": "Headline, subhead, three proof points, the offer. If the copy doesn't work in a plain doc, gradients won't save it.", "items": [], "stat": null, "mascot": null },
+      { "type": "STEP", "headline": "Show it *moving*", "body": "A short loop of the product in use, near the top, explains it faster than another paragraph.", "items": [], "stat": null, "mascot": null },
+      { "type": "STEP", "headline": "Build it, then check it on a *phone*", "body": "Claude Code gets the build moving. Then go through every section at 375px wide before calling it done.", "items": [], "stat": null, "mascot": null },
+      { "type": "COMPARE", "headline": "Homepage vs *launch* page", "body": "", "items": ["Ten links | One action", "Written for everyone | Written for one visitor", "Redesigned forever | Done when it converts"], "stat": "HOMEPAGE | LAUNCH PAGE", "mascot": null },
+      { "type": "CTA", "headline": "Want one built for your *launch*?", "body": "Launch videos and landing pages by Studio FX.", "items": [], "stat": null, "mascot": null }
+    ],
+    "caption": "A launch page isn't a small homepage. It's one argument for one action.\n\nThe order that works: decide the action, write the copy, add something that moves, build, then check every section on a phone. Design comes after the words, not before.\n\nIf you've got a launch coming and want the video and page handled, DM LAUNCH.",
+    "hashtags": ["#landingpage", "#launch", "#webdesign", "#claudecode", "#startup"],
+    "source_url": null,
+    "note_id": null,
+    "variant": { "cover_type": "COVER_TYPE", "hook_style": "teardown", "slide_count": 7, "cta_type": "launch", "mascot_used": false }
+  },
+  {
+    "pillar": "SAVEABLE",
+    "topic_key": "checklist-before-shipping-ai-built-site",
+    "hook": "Before you ship the site Claude built, check these",
+    "slides": [
+      { "type": "COVER_GRADIENT", "headline": "Before you ship the site *Claude* built", "body": "", "items": [], "stat": "CHECKLIST / SAVE FOR LAUNCH DAY", "mascot": null },
+      { "type": "LIST", "headline": "*Content*", "body": "", "items": ["No lorem ipsum left anywhere", "Every button goes somewhere", "Prices match the checkout", "The contact email actually receives"], "stat": null, "mascot": null },
+      { "type": "LIST", "headline": "*Mobile*", "body": "", "items": ["Checked at 375px wide", "Tap targets big enough for thumbs", "No sideways scroll", "Text readable without zooming"], "stat": null, "mascot": null },
+      { "type": "LIST", "headline": "*Technical*", "body": "", "items": ["Page title and description set", "Share image shows up in a DM", "Forms tested end to end", "Analytics fires once, not twice"], "stat": null, "mascot": null },
+      { "type": "LIST", "headline": "Before you *post* it", "body": "", "items": ["Open it on someone else's phone", "Send it to one honest person", "Read the headline out loud"], "stat": null, "mascot": null },
+      { "type": "QUOTE", "headline": "Nobody remembers the launch date. They remember the *broken* button.", "body": "Forward Thinking Co", "items": [], "stat": null, "mascot": null },
+      { "type": "CTA", "headline": "Get the printable *version*", "body": "This checklist is in the starter pack.", "items": [], "stat": null, "mascot": null }
+    ],
+    "caption": "AI gets you to a working site fast. It doesn't check that the contact form goes to an inbox you read.\n\nFifteen boring checks, grouped by content, mobile, technical, and the human bit at the end. Run them before you post the link, not after someone DMs you a screenshot.\n\nSave it for launch day.\n\nFree starter pack, link in bio →",
+    "hashtags": ["#webdesign", "#claudecode", "#launchchecklist", "#aitools", "#buildwithai", "#indiehacker"],
+    "source_url": null,
+    "note_id": null,
+    "variant": { "cover_type": "COVER_GRADIENT", "hook_style": "checklist", "slide_count": 7, "cta_type": "starter", "mascot_used": false }
+  },
+  {
+    "pillar": "HABITS",
+    "topic_key": "signs-side-project-is-a-hobby",
+    "hook": "Signs your side project is a hobby now",
+    "slides": [
+      { "type": "COVER_MASCOT", "headline": "Signs your side project is a *hobby* now", "body": "", "items": [], "stat": null, "mascot": "flex" },
+      { "type": "LIST", "headline": "The roadmap has a *roadmap*", "body": "", "items": ["Phase 1: research tools", "Phase 2: compare tools", "Phase 3: new tool drops, restart"], "stat": null, "mascot": "faceplant" },
+      { "type": "STEP", "headline": "More rewrites than *links* shared", "body": "The landing page has had five headlines and zero visitors who weren't you.", "items": [], "stat": null, "mascot": null },
+      { "type": "STEP", "headline": "\"Just one more *feature*\"", "body": "Features don't find users. Posts, DMs and slightly awkward asks do.", "items": [], "stat": null, "mascot": null },
+      { "type": "STEP", "headline": "You track tasks, not *conversations*", "body": "A to-do app full of ticked boxes and zero replies from a buyer is a hobby with extra steps.", "items": [], "stat": null, "mascot": null },
+      { "type": "COMPARE", "headline": "Hobby vs *business*", "body": "", "items": ["Builds what's fun | Builds what's asked for", "Shows friends | Shows strangers", "Waits for ready | Ships, then fixes"], "stat": "HOBBY | BUSINESS", "mascot": null },
+      { "type": "CTA", "headline": "Turn it back into a *project*", "body": "The starter pack starts with the first ask, not the first feature.", "items": [], "stat": null, "mascot": null }
+    ],
+    "caption": "Nothing wrong with a hobby. Just be honest about which one you're running.\n\nIf the roadmap keeps resetting every time a new tool drops, and the only visitor to the landing page is you, it might be time to send one awkward message instead of building one more feature.\n\nWhich of these hit closest?\n\nFree starter pack, link in bio →",
+    "hashtags": ["#sideproject", "#indiehacker", "#buildinpublic", "#solofounder", "#aitools"],
+    "source_url": null,
+    "note_id": null,
+    "variant": { "cover_type": "COVER_MASCOT", "hook_style": "self-roast", "slide_count": 7, "cta_type": "starter", "mascot_used": true }
+  }
+]

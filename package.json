@@ -1,0 +1,30 @@
+{
+  "name": "content-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "mascot": "node scripts/render-mascot-sheet.js",
+    "samples": "node scripts/render-samples.js",
+    "seed": "node scripts/seed.js",
+    "dry": "node src/cli.js generate --dry",
+    "generate": "node src/cli.js generate",
+    "start": "node src/cli.js serve",
+    "test": "node --test test/*.test.js",
+    "dbcheck": "node scripts/dbcheck.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.132.1",
+    "dotenv": "^18.0.6",
+    "express": "^5.3.0",
+    "multer": "^2.4.0",
+    "node-cron": "^4.6.0",
+    "nodemailer": "^10.0.16",
+    "pg": "^8.23.1",
+    "puppeteer": "^25.13.0",
+    "zod": "^4.6.5"
+  }
+}
