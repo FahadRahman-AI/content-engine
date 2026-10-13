@@ -1,12 +1,13 @@
 // Deterministic checks that run before the critic. Cheap, exact, and not up to a model.
 import { BANNED_WORDS, CTA_TEXT } from './constants.js';
+import { itemText } from './schema.js';
 
 function allText(post) {
   return [
     post.hook,
     post.caption,
     ...post.hashtags,
-    ...post.slides.flatMap((s) => [s.headline, s.body, s.stat ?? '', ...s.items]),
+    ...post.slides.flatMap((s) => [s.headline, s.body, s.stat ?? '', s.mascot_say ?? '', ...s.columns, ...s.items.map(itemText)]),
   ].join('\n');
 }
 
@@ -30,8 +31,8 @@ export function lintPost(post, plan) {
   }
   if (plan.topicKeys.includes(post.topic_key)) issues.push(`topic_key "${post.topic_key}" was already used`);
 
-  if (post.source_url && !plan.searchUrls.includes(post.source_url)) {
-    issues.push('source_url was not returned by web search; use an exact URL from the search results');
+  for (const u of [post.source_url, ...post.extra_sources].filter(Boolean)) {
+    if (!plan.searchUrls.includes(u)) issues.push(`source ${u} was not returned by web search; use exact URLs from the search results`);
   }
   if (post.pillar === 'TOOL' && !post.source_url) issues.push('TOOL posts require source_url');
   if (post.pillar === 'TESTED' && !post.note_id) issues.push('TESTED posts require note_id');

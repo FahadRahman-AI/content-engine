@@ -5,7 +5,7 @@ import { PostSchema } from '../src/schema.js';
 import { lintPost } from '../src/rules.js';
 import { chooseVariant, pickCta, pickPillar } from '../src/rotation.js';
 import { extractJson, londonDate } from '../src/util.js';
-import { headlineHtml, slideData } from '../src/render.js';
+import { headlineHtml, slideHtml } from '../src/render.js';
 import { signedUrl, verify } from '../src/sign.js';
 import { buildPlan } from '../src/generate.js';
 import { htmlToText } from '../src/sources.js';
@@ -21,29 +21,34 @@ test('every seed post passes the schema', () => {
 });
 
 test('schema: unknown slide type falls back to STEP', () => {
-  const p = clone(seeds[0]);
+  const p = clone(seeds[1]);
   p.slides[2].type = 'WHATEVER';
   assert.equal(PostSchema.parse(p).slides[2].type, 'STEP');
 });
 
-test('schema rejects structural violations', () => {
+test('schema rejects structural violations and thin slides', () => {
   const bad = (mut, re) => {
-    const p = clone(seeds[1]);
+    const p = clone(seeds[0]);
     mut(p);
     const r = PostSchema.safeParse(p);
     assert.ok(!r.success && r.error.issues.some((i) => re.test(i.message)), `expected ${re}`);
   };
   bad((p) => (p.slides.at(-1).type = 'STEP'), /last slide/);
   bad((p) => (p.slides[0].type = 'STEP'), /first slide/);
-  bad((p) => (p.hook = 'one two three four five six seven eight nine ten eleven twelve thirteen'), /hook/);
-  bad((p) => (p.slides[1].body = Array(30).fill('w').join(' ')), /28/);
-  bad((p) => (p.variant.slide_count = 8), /slide_count/);
-  bad((p) => (p.slides[1].mascot = 'smug'), /mascot_used/);
-  bad((p) => p.slides.pop(), /(?:too_small|>=6|slide)/i);
+  bad((p) => (p.hook = 'one two three four five six seven eight nine'), /hook/);
+  bad((p) => (p.hook = 'two words'), /hook/);
+  bad((p) => (p.slides[2].items = p.slides[2].items.slice(0, 2)), /at least 3 items/);
+  bad((p) => (p.slides[2].items = ['a', 'b', 'c']), /words of substance/);
+  bad((p) => (p.slides[2].body = Array(40).fill('w').join(' ')), /32/);
+  bad((p) => (p.variant.slide_count = 9), /slide_count/);
+  bad((p) => p.slides.forEach((s) => (s.mascot = null, s.mascot_say = null)), /mascot slides/);
+  bad((p) => (p.slides[1].items[0].logo = 'https://claude.com'), /logo/);
+  bad((p) => (p.slides[1].items[0].logo = null), /TOOLS items must be cards/);
+  bad((p) => p.slides.splice(2, 4), /(?:too_small|>=8|slide)/i);
 });
 
 test('lint catches banned words, wrong CTA, unseen source', () => {
-  const p = PostSchema.parse(seeds[1]);
+  const p = PostSchema.parse(seeds[0]);
   const plan = { pillar: 'SAVEABLE', cta_type: 'starter', variant: { cover_type: p.variant.cover_type, hook_style: p.variant.hook_style, slide_count: p.variant.slide_count }, topicKeys: [], searchUrls: [], noteIds: [] };
   assert.deepEqual(lintPost(p, plan), []);
   const dirty = clone(p);
@@ -130,14 +135,26 @@ test('londonDate rolls over on London time', () => {
   assert.equal(londonDate(1, new Date('2026-01-09T23:30:00Z')), '2026-01-10'); // GMT
 });
 
-test('render helpers: single emphasised word, mascot only where allowed', () => {
+test('render helpers: single emphasised word, CTA has no mascot, logos fall back to a tile', async () => {
   assert.equal(headlineHtml('A *big plan* here'), 'A <em>big</em> plan here');
   assert.equal(headlineHtml('*a* and *b*'), '<em>a</em> and b');
   assert.equal(headlineHtml('<b>x</b>'), '&lt;b&gt;x&lt;/b&gt;');
-  const d = slideData({ type: 'CTA', headline: 'x', mascot: 'smug' }, { index: 7, last: true, pillar: 'HABITS', ctaType: 'launch', handle: 'h' });
-  assert.equal(d.mascot, '');
-  assert.equal(d.arrow, '');
-  assert.equal(d.cta, 'DM LAUNCH →');
+  const html = await slideHtml({ type: 'CTA', headline: 'x', items: ['one'], mascot: 'smug' }, { index: 8, stepIndex: 1, last: true, pillar: 'HABITS', ctaType: 'launch', handle: 'h', logos: {} });
+  assert.ok(html.includes('DM LAUNCH →'));
+  assert.ok(!html.includes('class="mband"'), 'no mascot band on the CTA');
+  const tools = await slideHtml({ type: 'TOOLS', headline: 'x', items: [{ title: 'Cursor', text: 't', logo: 'cursor.com' }, { title: 'Zed', text: 't', logo: 'zed.dev' }], mascot: 'smug', mascot_say: 'hi' }, { index: 1, stepIndex: 0, last: false, pillar: 'TOOL', ctaType: 'starter', handle: 'h', logos: { 'cursor.com': 'data:image/png;base64,AAAA', 'zed.dev': null } });
+  assert.ok(tools.includes('data:image/png;base64,AAAA'));
+  assert.ok(tools.includes('class="ico tile">Z<'));
+  assert.ok(tools.includes('class="mband"') && tools.includes('hi'));
+});
+
+test('logo fetcher only accepts bare domains and rejects tiny fallback icons', async () => {
+  const { logoDataUri } = await import('../src/logos.js');
+  const png = (n) => new Response(Buffer.alloc(n, 1), { status: 200, headers: { 'content-type': 'image/png' } });
+  assert.equal(await logoDataUri('http://evil.test/x', { fetchImpl: async () => png(2000) }), null);
+  assert.equal(await logoDataUri('localhost', { fetchImpl: async () => png(2000) }), null);
+  assert.match(await logoDataUri('real-tool.example', { fetchImpl: async () => png(2000) }), /^data:image\/png;base64,/);
+  assert.equal(await logoDataUri('tiny-icon.example', { fetchImpl: async () => png(100) }), null);
 });
 
 test('htmlToText drops scripts and tags', () => {
@@ -169,4 +186,31 @@ test('pause/resume links are signed and last 30 days', async () => {
   assert.ok(verify('pause', 'engine', u.searchParams.get('exp'), u.searchParams.get('sig')));
   assert.ok(!verify('resume', 'engine', u.searchParams.get('exp'), u.searchParams.get('sig')));
   assert.ok(Number(u.searchParams.get('exp')) - Date.now() > 29 * 86400000);
+});
+
+test('Resend payload carries inline images as base64 with content_id', async () => {
+  const { resendPayload, send } = await import('../src/mail.js');
+  const mail = { subject: 'S', html: '<img src="cid:slide1">', text: 't', attachments: [{ filename: '01.jpg', content: Buffer.from('abc'), cid: 'slide1', contentType: 'image/jpeg' }] };
+  const p = resendPayload(mail, { from: 'a@b.c', to: 'me@x.y' });
+  assert.deepEqual(p.to, ['me@x.y']);
+  assert.equal(p.attachments[0].content, Buffer.from('abc').toString('base64'));
+  assert.equal(p.attachments[0].content_id, 'slide1');
+  process.env.RESEND_API_KEY = 're_test';
+  process.env.GMAIL_USER = 'me@x.y';
+  let seen;
+  await send(mail, { fetchImpl: async (url, init) => ((seen = { url, init }), new Response('{"id":"1"}', { status: 200 })) });
+  delete process.env.RESEND_API_KEY;
+  assert.equal(seen.url, 'https://api.resend.com/emails');
+  assert.equal(seen.init.headers.Authorization, 'Bearer re_test');
+  await assert.rejects(
+    (async () => {
+      process.env.RESEND_API_KEY = 're_test';
+      try {
+        await send(mail, { fetchImpl: async () => new Response('{"message":"nope"}', { status: 403 }) });
+      } finally {
+        delete process.env.RESEND_API_KEY;
+      }
+    })(),
+    /Resend email failed \(403\): nope/
+  );
 });

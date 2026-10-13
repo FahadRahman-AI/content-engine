@@ -11,7 +11,7 @@ export const model = () => need('CLAUDE_MODEL');
 export const webSearchTool = (extra = {}) => ({
   type: process.env.WEB_SEARCH_TOOL || 'web_search_20250305',
   name: 'web_search',
-  max_uses: 6,
+  max_uses: 10,
   ...extra,
 });
 export const webFetchTool = (extra = {}) => ({

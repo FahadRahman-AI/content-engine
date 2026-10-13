@@ -14,7 +14,8 @@
     "generate": "node src/cli.js generate",
     "start": "node src/cli.js serve",
     "test": "node --test test/*.test.js",
-    "dbcheck": "node scripts/dbcheck.js"
+    "dbcheck": "node scripts/dbcheck.js",
+    "starter": "node scripts/build-starter-pack.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.132.1",

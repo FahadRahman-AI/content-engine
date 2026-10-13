@@ -1,118 +1,841 @@
 [
   {
+    "pillar": "SAVEABLE",
+    "topic_key": "ai-stack-for-building-a-site-solo",
+    "hook": "The AI stack for building a site solo",
+    "slides": [
+      {
+        "type": "COVER_TYPE",
+        "headline": "The AI stack for building a *site* solo",
+        "body": "Five tools, one job each, and the order to use them in. Save this before your next build.",
+        "items": [],
+        "columns": [],
+        "stat": "TOOL MAP / SAVE THIS",
+        "mascot": null,
+        "mascot_say": null
+      },
+      {
+        "type": "TOOLS",
+        "headline": "Five tools. One *job* each.",
+        "body": "Most solo builders use too many tools at once. Give each one a single job and the stack gets quiet.",
+        "items": [
+          {
+            "title": "Claude Code",
+            "text": "Anthropic's coding agent. Reads your repo, edits files and runs commands from your terminal.",
+            "logo": "claude.com",
+            "tag": "BUILD"
+          },
+          {
+            "title": "Cursor",
+            "text": "An AI code editor built on VS Code. Best when you want to see and steer every edit.",
+            "logo": "cursor.com",
+            "tag": "EDIT"
+          },
+          {
+            "title": "v0",
+            "text": "Turns a prompt into UI as React and Tailwind code you can export and keep.",
+            "logo": "v0.dev",
+            "tag": "UI"
+          },
+          {
+            "title": "Figma",
+            "text": "Where layout and spacing get decided before anyone prompts anything.",
+            "logo": "figma.com",
+            "tag": "DESIGN"
+          },
+          {
+            "title": "Vercel",
+            "text": "Hosts the finished site and gives every change its own preview link.",
+            "logo": "vercel.com",
+            "tag": "SHIP"
+          }
+        ],
+        "columns": [],
+        "stat": null,
+        "mascot": "smug",
+        "mascot_say": "Five tabs open. Plan is working."
+      },
+      {
+        "type": "STEP",
+        "headline": "Write the *brief* before any tool opens",
+        "body": "Every tool above gives better output when it gets a better brief. Spend ten minutes here.",
+        "items": [
+          {
+            "title": "Audience",
+            "text": "One sentence: the visitor, and what they already tried."
+          },
+          {
+            "title": "One action",
+            "text": "Book a call, join the list, or buy. Pick one."
+          },
+          {
+            "title": "Sections",
+            "text": "List them top to bottom. Order is a decision, so you make it."
+          },
+          {
+            "title": "Real copy",
+            "text": "Paste the actual headline and price. Placeholder text gives placeholder pages."
+          }
+        ],
+        "columns": [],
+        "stat": null,
+        "mascot": null,
+        "mascot_say": null
+      },
+      {
+        "type": "STEP",
+        "headline": "Get the first *draft* on screen",
+        "body": "Use the agent for structure and the editor for fine-tuning. Don't polish yet.",
+        "items": [
+          {
+            "title": "Let the agent build",
+            "text": "Give Claude Code the brief and one instruction: build only what the brief lists."
+          },
+          {
+            "title": "Keep prompts small",
+            "text": "One section per prompt. Review each result before asking for the next."
+          },
+          {
+            "title": "Save your rules",
+            "text": "Put fonts, colours and spacing in a DESIGN.md the agent reads every session."
+          },
+          {
+            "title": "Commit often",
+            "text": "A commit after every working section gives you a safe place to go back to."
+          }
+        ],
+        "columns": [],
+        "stat": null,
+        "mascot": null,
+        "mascot_say": null
+      },
+      {
+        "type": "MATRIX",
+        "headline": "Which tool for which *job*",
+        "body": "",
+        "items": [
+          {
+            "title": "Claude Code",
+            "text": "",
+            "logo": "claude.com",
+            "cells": [
+              "Whole-site builds and refactors",
+              "Review what it changed"
+            ]
+          },
+          {
+            "title": "Cursor",
+            "text": "",
+            "logo": "cursor.com",
+            "cells": [
+              "Hands-on edits and small fixes",
+              "Steer each edit yourself"
+            ]
+          },
+          {
+            "title": "v0",
+            "text": "",
+            "logo": "v0.dev",
+            "cells": [
+              "First pass at a section's UI",
+              "Wire it into your project"
+            ]
+          },
+          {
+            "title": "Figma",
+            "text": "",
+            "logo": "figma.com",
+            "cells": [
+              "Layout and spacing decisions",
+              "Hand the spec to the agent"
+            ]
+          },
+          {
+            "title": "Vercel",
+            "text": "",
+            "logo": "vercel.com",
+            "cells": [
+              "Hosting and preview links",
+              "Check each preview on a phone"
+            ]
+          }
+        ],
+        "columns": [
+          "Best for",
+          "You still do"
+        ],
+        "stat": null,
+        "mascot": null,
+        "mascot_say": null
+      },
+      {
+        "type": "COMPARE",
+        "headline": "Prompting vs *briefing*",
+        "body": "The difference between a generic page and a usable one is mostly what you wrote before you started.",
+        "items": [
+          "Make me a landing page | Brief with audience, sections, copy and one action",
+          "Looks modern | Two fonts, one accent, a spacing scale in DESIGN.md",
+          "Fix everything | One section per prompt, reviewed before the next",
+          "Done when it looks good | Done when it works at 375px wide"
+        ],
+        "columns": [],
+        "stat": "PROMPTING | BRIEFING",
+        "mascot": "shades",
+        "mascot_say": "Briefed. Obviously."
+      },
+      {
+        "type": "LIST",
+        "headline": "Before you *ship* it",
+        "body": "Run these on the live preview link, not on your local copy.",
+        "items": [
+          {
+            "title": "Every button goes somewhere",
+            "text": "Click each one, twice."
+          },
+          {
+            "title": "Checked at 375px wide",
+            "text": "Scroll every section on a phone-sized screen."
+          },
+          {
+            "title": "Contact form reaches you",
+            "text": "Submit it and find the entry where it should land."
+          },
+          {
+            "title": "Share image works",
+            "text": "Paste the link into a DM to yourself and look."
+          },
+          {
+            "title": "One honest person has seen it",
+            "text": "Ask what they think the page wants them to do."
+          }
+        ],
+        "columns": [],
+        "stat": null,
+        "mascot": "sweat",
+        "mascot_say": "Launch day. Allegedly ready."
+      },
+      {
+        "type": "CTA",
+        "headline": "Get the *brief* and the checklist",
+        "body": "Both are in the free starter pack, ready to paste and print.",
+        "items": [
+          "Claude Code brief template: fill it in, paste it, build",
+          "Pre-launch checklist: 15 checks, printable",
+          "Launch page outline: six sections with a prompt for each",
+          "First-ask worksheet: get a buyer conversation before more features"
+        ],
+        "columns": [],
+        "stat": null,
+        "mascot": null,
+        "mascot_say": null
+      }
+    ],
+    "caption": "Most AI-built sites look the same because the brief is the same: \"make it modern\".\n\nThe stack is simple. Claude Code builds, Cursor edits, v0 drafts UI, Figma decides layout, Vercel ships. Each tool gets one job, and a written brief goes in before any of them open.\n\nSave this for your next build.\n\nFree starter pack, link in bio →",
+    "hashtags": [
+      "#claudecode",
+      "#aitools",
+      "#webdesign",
+      "#solofounder",
+      "#buildwithai"
+    ],
+    "source_url": null,
+    "extra_sources": [],
+    "note_id": null,
+    "variant": {
+      "cover_type": "COVER_TYPE",
+      "hook_style": "plain-promise",
+      "slide_count": 8,
+      "cta_type": "starter",
+      "mascot_used": true
+    }
+  },
+  {
     "pillar": "HABITS",
     "topic_key": "habits-that-keep-you-at-zero",
-    "hook": "Habits that keep you at $0 (asking for a friend)",
+    "hook": "Habits that keep you at $0",
     "slides": [
-      { "type": "COVER_MASCOT", "headline": "Habits that keep you at *$0*", "body": "Asking for a friend. The friend is very sure the plan is working.", "items": [], "stat": null, "mascot": "smug" },
-      { "type": "LIST", "headline": "Building before *asking*", "body": "", "items": ["A dashboard nobody requested", "Zero conversations with a buyer", "Launch post: \"excited to share\""], "stat": null, "mascot": "sweat" },
-      { "type": "STEP", "headline": "Rebuilding the stack every *Monday*", "body": "New framework, new UI kit, same empty inbox. The tool was never the bottleneck.", "items": [], "stat": null, "mascot": null },
-      { "type": "STEP", "headline": "Polishing the logo, not the *offer*", "body": "Nobody buys a gradient. They buy a clear answer to \"what do I get and what does it cost\".", "items": [], "stat": null, "mascot": null },
-      { "type": "STEP", "headline": "Pricing by *vibes*", "body": "Picking a number that feels safe instead of asking three people what they would actually pay.", "items": [], "stat": null, "mascot": null },
-      { "type": "COMPARE", "headline": "How it feels vs what it *is*", "body": "", "items": ["\"Almost ready\" | Not shipped", "\"Building in public\" | Posting screenshots", "\"Waiting for the right moment\" | Avoiding the DMs"], "stat": "HOW IT FEELS | WHAT IT IS", "mascot": null },
-      { "type": "QUOTE", "headline": "Shipping ugly beats polishing *invisible*.", "body": "Forward Thinking Co", "items": [], "stat": null, "mascot": null },
-      { "type": "CTA", "headline": "Get to your first *yes* faster", "body": "The starter pack is the checklist these slides wish they'd had.", "items": [], "stat": null, "mascot": null }
+      {
+        "type": "COVER_MASCOT",
+        "headline": "Habits that keep you at *$0*",
+        "body": "Seven habits, with the fix for each. Check how many you recognise.",
+        "items": [],
+        "columns": [],
+        "stat": null,
+        "mascot": "smug",
+        "mascot_say": "The plan is working."
+      },
+      {
+        "type": "LIST",
+        "headline": "Building before *asking*",
+        "body": "This is the habit that costs the most, because it feels like progress the whole time.",
+        "items": [
+          {
+            "title": "A dashboard nobody requested",
+            "text": "Features feel productive. Requests are what tell you which feature matters."
+          },
+          {
+            "title": "Zero conversations with a buyer",
+            "text": "You can't know what they'd pay for if you've never asked."
+          },
+          {
+            "title": "The launch post comes first",
+            "text": "Posting before any conversation gets you applause, not customers."
+          }
+        ],
+        "columns": [],
+        "stat": null,
+        "mascot": "sweat",
+        "mascot_say": "Where is everyone?"
+      },
+      {
+        "type": "STEP",
+        "headline": "Rebuilding the stack every *Monday*",
+        "body": "A new tool is a way to avoid the hard part while still feeling busy.",
+        "items": [
+          {
+            "title": "The symptom",
+            "text": "New framework, new UI kit, same empty inbox."
+          },
+          {
+            "title": "The cause",
+            "text": "The tool was never the bottleneck. Talking to buyers is."
+          },
+          {
+            "title": "The fix",
+            "text": "Pick a stack for 90 days. Write the date on it."
+          },
+          {
+            "title": "The rule",
+            "text": "A new tool needs a customer problem it solves, not a launch post."
+          }
+        ],
+        "columns": [],
+        "stat": null,
+        "mascot": null,
+        "mascot_say": null
+      },
+      {
+        "type": "STEP",
+        "headline": "Polishing the logo, not the *offer*",
+        "body": "Nobody buys a gradient. They buy a clear answer to what they get and what it costs.",
+        "items": [
+          {
+            "title": "The symptom",
+            "text": "Five logo versions, zero price on the page."
+          },
+          {
+            "title": "The fix",
+            "text": "Write the offer in one sentence a stranger can repeat."
+          },
+          {
+            "title": "The test",
+            "text": "Ask someone to explain it back to you. If they can't, rewrite it."
+          },
+          {
+            "title": "The order",
+            "text": "Offer, then page, then brand. In that order."
+          }
+        ],
+        "columns": [],
+        "stat": null,
+        "mascot": "faceplant",
+        "mascot_say": "It had a nice gradient."
+      },
+      {
+        "type": "STEP",
+        "headline": "Pricing by *vibes*",
+        "body": "Picking the safe number is the same as picking no number.",
+        "items": [
+          {
+            "title": "The symptom",
+            "text": "You choose a price because it feels comfortable, not because anyone said it."
+          },
+          {
+            "title": "The fix",
+            "text": "Ask three people what they'd pay for the outcome, not the file."
+          },
+          {
+            "title": "The check",
+            "text": "If nobody flinches, you're probably too low."
+          },
+          {
+            "title": "The rule",
+            "text": "Change the price before you change the product."
+          }
+        ],
+        "columns": [],
+        "stat": null,
+        "mascot": null,
+        "mascot_say": null
+      },
+      {
+        "type": "COMPARE",
+        "headline": "How it feels vs what it *is*",
+        "body": "Every one of these sounds reasonable when you say it. That is how they survive.",
+        "items": [
+          "\"Almost ready\" | Not shipped",
+          "\"Building in public\" | Posting screenshots",
+          "\"Waiting for the right moment\" | Avoiding the DMs",
+          "\"Doing research\" | Another week of tools",
+          "\"I need one more feature\" | You need one more conversation"
+        ],
+        "columns": [],
+        "stat": "HOW IT FEELS | WHAT IT IS",
+        "mascot": null,
+        "mascot_say": null
+      },
+      {
+        "type": "LIST",
+        "headline": "One habit to drop *this week*",
+        "body": "Pick one. Not all seven.",
+        "items": [
+          {
+            "title": "Monday",
+            "text": "Delete the tool tabs you opened this month and haven't used."
+          },
+          {
+            "title": "Tuesday",
+            "text": "Write the offer in one sentence and read it out loud."
+          },
+          {
+            "title": "Wednesday",
+            "text": "Send the same short message to five people who have the problem."
+          },
+          {
+            "title": "Thursday",
+            "text": "Write down the one thing someone said that surprised you."
+          },
+          {
+            "title": "Friday",
+            "text": "Build only what that sentence asked for."
+          }
+        ],
+        "columns": [],
+        "stat": null,
+        "mascot": "victory",
+        "mascot_say": "Shipped. Eventually."
+      },
+      {
+        "type": "CTA",
+        "headline": "Get to your first *yes* faster",
+        "body": "The worksheet and checklist from this post are free.",
+        "items": [
+          "Claude Code brief template: fill it in, paste it, build",
+          "Pre-launch checklist: 15 checks, printable",
+          "Launch page outline: six sections with a prompt for each",
+          "First-ask worksheet: get a buyer conversation before more features"
+        ],
+        "columns": [],
+        "stat": null,
+        "mascot": null,
+        "mascot_say": null
+      }
     ],
-    "caption": "Every habit on this list feels productive while you're doing it. That's the problem.\n\nRebuilding the stack, polishing the logo, waiting for the right moment. None of it puts the offer in front of a person who could say yes.\n\nPick one habit from this list and drop it this week. Just one.\n\nFree starter pack, link in bio →",
-    "hashtags": ["#buildinpublic", "#solofounder", "#indiehacker", "#aitools", "#startup"],
+    "caption": "Every habit on this list feels productive while you're doing it. That's the problem.\n\nRebuilding the stack, polishing the logo, pricing by vibes. None of it puts the offer in front of a person who could say yes.\n\nPick one habit from the last slide and drop it this week. Just one.\n\nFree starter pack, link in bio →",
+    "hashtags": [
+      "#buildinpublic",
+      "#solofounder",
+      "#indiehacker",
+      "#aitools",
+      "#startup"
+    ],
     "source_url": null,
+    "extra_sources": [],
     "note_id": null,
-    "variant": { "cover_type": "COVER_MASCOT", "hook_style": "self-roast", "slide_count": 8, "cta_type": "starter", "mascot_used": true }
+    "variant": {
+      "cover_type": "COVER_MASCOT",
+      "hook_style": "quiet-mistake",
+      "slide_count": 8,
+      "cta_type": "starter",
+      "mascot_used": true
+    }
   },
   {
     "pillar": "SAVEABLE",
-    "topic_key": "brief-claude-code-like-a-client",
-    "hook": "Brief Claude Code like a client would brief you",
+    "topic_key": "launch-page-section-by-section",
+    "hook": "Build a launch page in six sections",
     "slides": [
-      { "type": "COVER_GRADIENT", "headline": "Brief Claude Code like a *client* would", "body": "", "items": [], "stat": "PROMPT TEMPLATE / SAVE THIS", "mascot": null },
-      { "type": "STEP", "headline": "Say who it's *for*", "body": "One sentence: the visitor, what they already tried, and what they want next. Vague audience, vague page.", "items": [], "stat": null, "mascot": null },
-      { "type": "STEP", "headline": "List the sections in *order*", "body": "Hero, proof, how it works, offer, FAQ, CTA. Order is a decision. Don't let the model make it for you.", "items": [], "stat": null, "mascot": null },
-      { "type": "STEP", "headline": "Paste the *real* copy", "body": "Placeholder text produces placeholder layouts. Give it the actual headline and the actual price, even if rough.", "items": [], "stat": null, "mascot": null },
-      { "type": "STEP", "headline": "Write the visual *rules* down", "body": "Two fonts, a few colours, a spacing scale, one accent. Keep them in a file the agent reads every session.", "items": [], "stat": null, "mascot": null },
-      { "type": "LIST", "headline": "The *template*", "body": "", "items": ["AUDIENCE: who, and what they tried", "SECTIONS: in order, one line each", "COPY: real headline, real offer", "RULES: fonts, colours, spacing", "DONE WHEN: it works at 375px wide"], "stat": null, "mascot": null },
-      { "type": "CTA", "headline": "Want the full *brief* file?", "body": "It's in the starter pack, ready to paste.", "items": [], "stat": null, "mascot": null }
+      {
+        "type": "COVER_GRADIENT",
+        "headline": "Build a launch page in *six* sections",
+        "body": "What goes in each one, and the prompt to give your AI agent.",
+        "items": [],
+        "columns": [],
+        "stat": "BLUEPRINT / SAVE THIS",
+        "mascot": null,
+        "mascot_say": null
+      },
+      {
+        "type": "STEP",
+        "headline": "*Hero*: who it's for",
+        "body": "The first screen decides whether anyone scrolls. It has one job.",
+        "items": [
+          {
+            "title": "Headline",
+            "text": "Who it's for and what they get, in under ten words."
+          },
+          {
+            "title": "Subline",
+            "text": "One sentence on how, in plain words."
+          },
+          {
+            "title": "One button",
+            "text": "The single action. Not two. Not a menu of options."
+          },
+          {
+            "title": "Prompt",
+            "text": "\"Write three headlines for [who] who want [outcome]. Plain words, no hype.\""
+          }
+        ],
+        "columns": [],
+        "stat": null,
+        "mascot": "smug",
+        "mascot_say": "Headline: perfect. Probably."
+      },
+      {
+        "type": "STEP",
+        "headline": "*Proof*: show it's real",
+        "body": "Only real work and facts you can verify. Invented proof gets found out.",
+        "items": [
+          {
+            "title": "Have results?",
+            "text": "Show them with the context: what, for whom, how long."
+          },
+          {
+            "title": "No results yet?",
+            "text": "Show your process or a sample you made for this page."
+          },
+          {
+            "title": "Never",
+            "text": "Fake logos, made-up reviews, numbers you can't back up."
+          },
+          {
+            "title": "Prompt",
+            "text": "\"Turn these facts into three proof points. Don't add numbers I didn't give you.\""
+          }
+        ],
+        "columns": [],
+        "stat": null,
+        "mascot": null,
+        "mascot_say": null
+      },
+      {
+        "type": "STEP",
+        "headline": "*How it works* in three steps",
+        "body": "A stranger should understand the offer in ten seconds.",
+        "items": [
+          {
+            "title": "Step one",
+            "text": "What they do first, in one sentence."
+          },
+          {
+            "title": "Step two",
+            "text": "What you do, in one sentence."
+          },
+          {
+            "title": "Step three",
+            "text": "What they get, in one sentence."
+          },
+          {
+            "title": "Prompt",
+            "text": "\"Explain how [offer] works in three steps. One sentence each, no jargon.\""
+          }
+        ],
+        "columns": [],
+        "stat": null,
+        "mascot": null,
+        "mascot_say": null
+      },
+      {
+        "type": "STEP",
+        "headline": "The *offer*: be specific",
+        "body": "Vague offers get ignored. Specific ones get questions.",
+        "items": [
+          {
+            "title": "What's included",
+            "text": "A list of exactly what they receive."
+          },
+          {
+            "title": "The price",
+            "text": "Show it. Hidden prices cost you the buyers who'd have paid."
+          },
+          {
+            "title": "What happens next",
+            "text": "The first thing that happens after they say yes."
+          },
+          {
+            "title": "Prompt",
+            "text": "\"Write the offer block from this and nothing else: included, price, timeline.\""
+          }
+        ],
+        "columns": [],
+        "stat": null,
+        "mascot": "shades",
+        "mascot_say": "Price: confident. Hidden."
+      },
+      {
+        "type": "LIST",
+        "headline": "*FAQ*: answer the doubt",
+        "body": "Write the questions a hesitant buyer asks, not the ones you wish they'd ask.",
+        "items": [
+          {
+            "title": "How much, exactly?",
+            "text": "State the price and what changes it."
+          },
+          {
+            "title": "How long does it take?",
+            "text": "Give the real timeline, including their part."
+          },
+          {
+            "title": "Is this for me?",
+            "text": "Say who it's for and who it isn't."
+          },
+          {
+            "title": "What if I'm not happy?",
+            "text": "Say what you'll do. Only promise what you'll honour."
+          }
+        ],
+        "columns": [],
+        "stat": null,
+        "mascot": null,
+        "mascot_say": null
+      },
+      {
+        "type": "COMPARE",
+        "headline": "Launch page vs *homepage*",
+        "body": "One is a decision. The other is a directory. Know which one you are building.",
+        "items": [
+          "Ten links | One action",
+          "Written for everyone | Written for one visitor",
+          "Redesigned forever | Done when it converts",
+          "Explains the whole company | Makes one argument"
+        ],
+        "columns": [],
+        "stat": "HOMEPAGE | LAUNCH PAGE",
+        "mascot": null,
+        "mascot_say": null
+      },
+      {
+        "type": "CTA",
+        "headline": "Get the outline and *prompts*",
+        "body": "The full launch page outline is free in the starter pack.",
+        "items": [
+          "Claude Code brief template: fill it in, paste it, build",
+          "Pre-launch checklist: 15 checks, printable",
+          "Launch page outline: six sections with a prompt for each",
+          "First-ask worksheet: get a buyer conversation before more features"
+        ],
+        "columns": [],
+        "stat": null,
+        "mascot": null,
+        "mascot_say": null
+      }
     ],
-    "caption": "Most \"AI built me a generic site\" problems are briefing problems.\n\nIf you'd hand a human designer a one-line request and expect a great page, you'd be disappointed there too. Give the agent what a good client gives you: who it's for, the sections in order, the real copy, and the visual rules.\n\nSave this for your next build.\n\nFree starter pack, link in bio →",
-    "hashtags": ["#claudecode", "#aitools", "#webdesign", "#landingpage", "#buildwithai", "#solofounder"],
-    "source_url": null,
-    "note_id": null,
-    "variant": { "cover_type": "COVER_GRADIENT", "hook_style": "how-to", "slide_count": 7, "cta_type": "starter", "mascot_used": false }
-  },
-  {
-    "pillar": "TEARDOWN",
-    "topic_key": "teardown-this-content-engine",
-    "hook": "This carousel was written by a cron job",
-    "slides": [
-      { "type": "COVER_TYPE", "headline": "This carousel was written by a cron *job*", "body": "A teardown of the engine behind this page, and the human who still has to press approve.", "items": [], "stat": "TEARDOWN / THIS ENGINE", "mascot": null },
-      { "type": "STEP", "headline": "21:00: research and *draft*", "body": "Claude picks the day's pillar, searches for sources, and drafts 6 to 8 slides against a written brand brief.", "items": [], "stat": null, "mascot": null },
-      { "type": "STEP", "headline": "A second call *fact-checks* it", "body": "Every claim must trace to a source or a real note. Fail twice and the day is skipped. No filler posts.", "items": [], "stat": null, "mascot": null },
-      { "type": "STEP", "headline": "Puppeteer renders the *slides*", "body": "HTML templates and one shared token file, exported as 1080 by 1350 JPEGs.", "items": [], "stat": null, "mascot": null },
-      { "type": "STEP", "headline": "A human *approves* it", "body": "An email with the slides and approve or reject links. Rejections carry a note the next draft reads.", "items": [], "stat": null, "mascot": null },
-      { "type": "STEP", "headline": "07:00: it *publishes*", "body": "Through Instagram's API. Then it pulls saves, shares and comments at 48 hours and again at 7 days.", "items": [], "stat": null, "mascot": null },
-      { "type": "STAT", "headline": "Proven formats vs one *experiment*", "body": "30% of posts change exactly one thing: cover, hook style, length or CTA.", "items": [], "stat": "70/30", "mascot": null },
-      { "type": "CTA", "headline": "Steal the *setup*", "body": "The starter pack has the brief template this engine runs on.", "items": [], "stat": null, "mascot": null }
+    "caption": "A launch page isn't a small homepage. It's one argument for one action.\n\nSix sections in order: hero, proof, how it works, offer, FAQ, call to action. Write the words before the design, and give your agent one section at a time.\n\nSave it for your next launch.\n\nFree starter pack, link in bio →",
+    "hashtags": [
+      "#landingpage",
+      "#launch",
+      "#claudecode",
+      "#webdesign",
+      "#startup"
     ],
-    "caption": "Yes, this post was drafted by a script. No, it didn't post itself without a human looking at it.\n\nThe engine: research and draft at 21:00, a separate fact-check pass, HTML templates rendered to images, an approval email, then publishing at 07:00. Afterwards it reads saves, shares and comments and tests one change at a time.\n\nThe goal isn't more posts. It's fewer bad ones.\n\nFree starter pack, link in bio →",
-    "hashtags": ["#claudecode", "#automation", "#buildinpublic", "#aitools", "#contentsystems"],
     "source_url": null,
+    "extra_sources": [],
     "note_id": null,
-    "variant": { "cover_type": "COVER_TYPE", "hook_style": "curiosity", "slide_count": 8, "cta_type": "starter", "mascot_used": false }
-  },
-  {
-    "pillar": "TEARDOWN",
-    "topic_key": "teardown-launch-landing-page",
-    "hook": "What actually goes into a launch landing page",
-    "slides": [
-      { "type": "COVER_TYPE", "headline": "What actually goes into a launch *landing* page", "body": "", "items": [], "stat": "TEARDOWN / LAUNCH PAGE", "mascot": null },
-      { "type": "STEP", "headline": "Start with the *one* action", "body": "Book a call, join a waitlist, or buy. One page, one job. Everything else is decoration.", "items": [], "stat": null, "mascot": null },
-      { "type": "STEP", "headline": "Write before you *design*", "body": "Headline, subhead, three proof points, the offer. If the copy doesn't work in a plain doc, gradients won't save it.", "items": [], "stat": null, "mascot": null },
-      { "type": "STEP", "headline": "Show it *moving*", "body": "A short loop of the product in use, near the top, explains it faster than another paragraph.", "items": [], "stat": null, "mascot": null },
-      { "type": "STEP", "headline": "Build it, then check it on a *phone*", "body": "Claude Code gets the build moving. Then go through every section at 375px wide before calling it done.", "items": [], "stat": null, "mascot": null },
-      { "type": "COMPARE", "headline": "Homepage vs *launch* page", "body": "", "items": ["Ten links | One action", "Written for everyone | Written for one visitor", "Redesigned forever | Done when it converts"], "stat": "HOMEPAGE | LAUNCH PAGE", "mascot": null },
-      { "type": "CTA", "headline": "Want one built for your *launch*?", "body": "Launch videos and landing pages by Studio FX.", "items": [], "stat": null, "mascot": null }
-    ],
-    "caption": "A launch page isn't a small homepage. It's one argument for one action.\n\nThe order that works: decide the action, write the copy, add something that moves, build, then check every section on a phone. Design comes after the words, not before.\n\nIf you've got a launch coming and want the video and page handled, DM LAUNCH.",
-    "hashtags": ["#landingpage", "#launch", "#webdesign", "#claudecode", "#startup"],
-    "source_url": null,
-    "note_id": null,
-    "variant": { "cover_type": "COVER_TYPE", "hook_style": "teardown", "slide_count": 7, "cta_type": "launch", "mascot_used": false }
+    "variant": {
+      "cover_type": "COVER_GRADIENT",
+      "hook_style": "plain-promise",
+      "slide_count": 8,
+      "cta_type": "starter",
+      "mascot_used": true
+    }
   },
   {
     "pillar": "SAVEABLE",
-    "topic_key": "checklist-before-shipping-ai-built-site",
-    "hook": "Before you ship the site Claude built, check these",
+    "topic_key": "15-checks-before-you-ship",
+    "hook": "15 checks before you ship an AI-built site",
     "slides": [
-      { "type": "COVER_GRADIENT", "headline": "Before you ship the site *Claude* built", "body": "", "items": [], "stat": "CHECKLIST / SAVE FOR LAUNCH DAY", "mascot": null },
-      { "type": "LIST", "headline": "*Content*", "body": "", "items": ["No lorem ipsum left anywhere", "Every button goes somewhere", "Prices match the checkout", "The contact email actually receives"], "stat": null, "mascot": null },
-      { "type": "LIST", "headline": "*Mobile*", "body": "", "items": ["Checked at 375px wide", "Tap targets big enough for thumbs", "No sideways scroll", "Text readable without zooming"], "stat": null, "mascot": null },
-      { "type": "LIST", "headline": "*Technical*", "body": "", "items": ["Page title and description set", "Share image shows up in a DM", "Forms tested end to end", "Analytics fires once, not twice"], "stat": null, "mascot": null },
-      { "type": "LIST", "headline": "Before you *post* it", "body": "", "items": ["Open it on someone else's phone", "Send it to one honest person", "Read the headline out loud"], "stat": null, "mascot": null },
-      { "type": "QUOTE", "headline": "Nobody remembers the launch date. They remember the *broken* button.", "body": "Forward Thinking Co", "items": [], "stat": null, "mascot": null },
-      { "type": "CTA", "headline": "Get the printable *version*", "body": "This checklist is in the starter pack.", "items": [], "stat": null, "mascot": null }
+      {
+        "type": "COVER_TYPE",
+        "headline": "15 checks before you ship the site *Claude* built",
+        "body": "Run these before you post the link, not after someone DMs you a screenshot.",
+        "items": [],
+        "columns": [],
+        "stat": "CHECKLIST / SAVE THIS",
+        "mascot": null,
+        "mascot_say": null
+      },
+      {
+        "type": "LIST",
+        "headline": "*Content*: say what you mean",
+        "body": "",
+        "items": [
+          {
+            "title": "No lorem ipsum left",
+            "text": "Search the page for \"lorem\" and \"placeholder\"."
+          },
+          {
+            "title": "Every button goes somewhere",
+            "text": "Click each one. Twice."
+          },
+          {
+            "title": "Prices match the checkout",
+            "text": "Compare the page, the checkout and any emails."
+          },
+          {
+            "title": "The contact email receives",
+            "text": "Send a test from a different address."
+          }
+        ],
+        "columns": [],
+        "stat": null,
+        "mascot": "smug",
+        "mascot_say": "I read it once. Fine."
+      },
+      {
+        "type": "LIST",
+        "headline": "*Mobile*: where most people look",
+        "body": "",
+        "items": [
+          {
+            "title": "Checked at 375px wide",
+            "text": "Dev tools, a phone size, scroll every section."
+          },
+          {
+            "title": "Tap targets fit a thumb",
+            "text": "Buttons and links you can hit without zooming."
+          },
+          {
+            "title": "No sideways scroll",
+            "text": "If the page wobbles, something is too wide."
+          },
+          {
+            "title": "Text readable without zooming",
+            "text": "Body text, buttons and form labels."
+          }
+        ],
+        "columns": [],
+        "stat": null,
+        "mascot": null,
+        "mascot_say": null
+      },
+      {
+        "type": "LIST",
+        "headline": "*Technical*: the invisible part",
+        "body": "",
+        "items": [
+          {
+            "title": "Page title and description set",
+            "text": "This is what shows in search and when shared."
+          },
+          {
+            "title": "Share image works in a DM",
+            "text": "Paste the link to yourself and look."
+          },
+          {
+            "title": "Forms tested end to end",
+            "text": "Submit it, then find the entry where it should land."
+          },
+          {
+            "title": "Analytics counts once",
+            "text": "One visit should be one visit, not two."
+          }
+        ],
+        "columns": [],
+        "stat": null,
+        "mascot": "sweat",
+        "mascot_say": "Why is it counting twice?"
+      },
+      {
+        "type": "LIST",
+        "headline": "The *human* bit",
+        "body": "Three checks no tool will do for you.",
+        "items": [
+          {
+            "title": "Open it on someone else's phone",
+            "text": "Their screen, their browser, their signal."
+          },
+          {
+            "title": "Send it to one honest person",
+            "text": "Ask what they thought the page wanted them to do."
+          },
+          {
+            "title": "Read the headline out loud",
+            "text": "If you stumble, rewrite it."
+          }
+        ],
+        "columns": [],
+        "stat": null,
+        "mascot": null,
+        "mascot_say": null
+      },
+      {
+        "type": "COMPARE",
+        "headline": "What AI checks vs what you *check*",
+        "body": "The agent says it works. You find out whether it works for a person.",
+        "items": [
+          "Code that runs | A page a stranger understands",
+          "Layout that renders | Layout that works on a phone",
+          "A form that submits | A form that reaches your inbox",
+          "Analytics installed | Analytics counting once"
+        ],
+        "columns": [],
+        "stat": "AI HANDLES | YOU CHECK",
+        "mascot": null,
+        "mascot_say": null
+      },
+      {
+        "type": "STAT",
+        "headline": "Fifteen checks. About *ten* minutes.",
+        "body": "Most of them take under a minute. The ones that don't are the ones that would have hurt.",
+        "items": [
+          {
+            "title": "Do them in order",
+            "text": "Content, mobile, technical, then the human bit."
+          },
+          {
+            "title": "Do them on the live link",
+            "text": "Your local copy hides half the problems."
+          }
+        ],
+        "columns": [],
+        "stat": "15",
+        "mascot": "victory",
+        "mascot_say": "Ten minutes. Worth it."
+      },
+      {
+        "type": "CTA",
+        "headline": "Print the *checklist*",
+        "body": "It's a one-page printable in the free starter pack.",
+        "items": [
+          "Claude Code brief template: fill it in, paste it, build",
+          "Pre-launch checklist: 15 checks, printable",
+          "Launch page outline: six sections with a prompt for each",
+          "First-ask worksheet: get a buyer conversation before more features"
+        ],
+        "columns": [],
+        "stat": null,
+        "mascot": null,
+        "mascot_say": null
+      }
     ],
-    "caption": "AI gets you to a working site fast. It doesn't check that the contact form goes to an inbox you read.\n\nFifteen boring checks, grouped by content, mobile, technical, and the human bit at the end. Run them before you post the link, not after someone DMs you a screenshot.\n\nSave it for launch day.\n\nFree starter pack, link in bio →",
-    "hashtags": ["#webdesign", "#claudecode", "#launchchecklist", "#aitools", "#buildwithai", "#indiehacker"],
-    "source_url": null,
-    "note_id": null,
-    "variant": { "cover_type": "COVER_GRADIENT", "hook_style": "checklist", "slide_count": 7, "cta_type": "starter", "mascot_used": false }
-  },
-  {
-    "pillar": "HABITS",
-    "topic_key": "signs-side-project-is-a-hobby",
-    "hook": "Signs your side project is a hobby now",
-    "slides": [
-      { "type": "COVER_MASCOT", "headline": "Signs your side project is a *hobby* now", "body": "", "items": [], "stat": null, "mascot": "flex" },
-      { "type": "LIST", "headline": "The roadmap has a *roadmap*", "body": "", "items": ["Phase 1: research tools", "Phase 2: compare tools", "Phase 3: new tool drops, restart"], "stat": null, "mascot": "faceplant" },
-      { "type": "STEP", "headline": "More rewrites than *links* shared", "body": "The landing page has had five headlines and zero visitors who weren't you.", "items": [], "stat": null, "mascot": null },
-      { "type": "STEP", "headline": "\"Just one more *feature*\"", "body": "Features don't find users. Posts, DMs and slightly awkward asks do.", "items": [], "stat": null, "mascot": null },
-      { "type": "STEP", "headline": "You track tasks, not *conversations*", "body": "A to-do app full of ticked boxes and zero replies from a buyer is a hobby with extra steps.", "items": [], "stat": null, "mascot": null },
-      { "type": "COMPARE", "headline": "Hobby vs *business*", "body": "", "items": ["Builds what's fun | Builds what's asked for", "Shows friends | Shows strangers", "Waits for ready | Ships, then fixes"], "stat": "HOBBY | BUSINESS", "mascot": null },
-      { "type": "CTA", "headline": "Turn it back into a *project*", "body": "The starter pack starts with the first ask, not the first feature.", "items": [], "stat": null, "mascot": null }
+    "caption": "AI gets you to a working site fast. It doesn't check that the contact form goes to an inbox you read.\n\nFifteen boring checks, grouped by content, mobile, technical and the human bit at the end. Run them on the live link before you post it.\n\nSave it for launch day.\n\nFree starter pack, link in bio →",
+    "hashtags": [
+      "#webdesign",
+      "#claudecode",
+      "#launchchecklist",
+      "#aitools",
+      "#buildwithai"
     ],
-    "caption": "Nothing wrong with a hobby. Just be honest about which one you're running.\n\nIf the roadmap keeps resetting every time a new tool drops, and the only visitor to the landing page is you, it might be time to send one awkward message instead of building one more feature.\n\nWhich of these hit closest?\n\nFree starter pack, link in bio →",
-    "hashtags": ["#sideproject", "#indiehacker", "#buildinpublic", "#solofounder", "#aitools"],
     "source_url": null,
+    "extra_sources": [],
     "note_id": null,
-    "variant": { "cover_type": "COVER_MASCOT", "hook_style": "self-roast", "slide_count": 7, "cta_type": "starter", "mascot_used": true }
+    "variant": {
+      "cover_type": "COVER_TYPE",
+      "hook_style": "number-list",
+      "slide_count": 8,
+      "cta_type": "starter",
+      "mascot_used": true
+    }
   }
 ]

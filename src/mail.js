@@ -49,8 +49,37 @@ export function failureEmail({ plan, issues, draft }) {
   };
 }
 
-export async function send(mail) {
+// Railway's Hobby plan blocks SMTP, so on Railway mail goes through Resend's HTTPS API (set RESEND_API_KEY).
+// Without RESEND_API_KEY it falls back to Gmail SMTP (fine on your own computer).
+export function resendPayload(mail, { from, to }) {
+  return {
+    from,
+    to: [to],
+    subject: mail.subject,
+    html: mail.html,
+    text: mail.text,
+    attachments: (mail.attachments ?? []).map((a) => ({
+      filename: a.filename,
+      content: Buffer.from(a.content).toString('base64'),
+      content_type: a.contentType,
+      ...(a.cid ? { content_id: a.cid } : {}),
+    })),
+  };
+}
+
+export async function send(mail, { fetchImpl = fetch } = {}) {
   const to = process.env.NOTIFY_EMAIL || need('GMAIL_USER');
+  if (process.env.RESEND_API_KEY) {
+    const from = process.env.RESEND_FROM || 'Forward Thinking Co engine <onboarding@resend.dev>';
+    const res = await fetchImpl('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, 'content-type': 'application/json' },
+      body: JSON.stringify(resendPayload(mail, { from, to })),
+    });
+    const body = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(`Resend email failed (${res.status}): ${body.message ?? res.statusText}`);
+    return body;
+  }
   return mailer().sendMail({ from: `Forward Thinking Co engine <${need('GMAIL_USER')}>`, to, ...mail });
 }
 

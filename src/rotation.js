@@ -1,8 +1,8 @@
 import { COVER_TYPES } from './constants.js';
 
 export const ORDER = ['TOOL', 'SAVEABLE', 'TEARDOWN', 'HABITS', 'TESTED'];
-export const HOOK_STYLES = ['self-roast', 'how-to', 'curiosity', 'checklist', 'contrarian', 'number'];
-export const SLIDE_COUNTS = [6, 7, 8];
+export const HOOK_STYLES = ['curiosity', 'contrarian', 'quiet-mistake', 'plain-promise', 'number-list'];
+export const SLIDE_COUNTS = [8, 9, 10];
 export const EXPLORE_RATE = 0.3;
 
 // recentPillars: most recent first. Returns { pillar, fellBack, generalHabits }.
@@ -43,7 +43,7 @@ export function chooseVariant({ recentVariants = [], best = null, rng = Math.ran
   const base = {
     cover_type: best?.cover_type ?? leastRecent(COVER_TYPES, recentVariants.map((v) => v.cover_type)),
     hook_style: best?.hook_style ?? leastRecent(HOOK_STYLES, recentVariants.map((v) => v.hook_style)),
-    slide_count: best?.slide_count ?? 7,
+    slide_count: best?.slide_count ?? 9,
   };
   const variant = { ...base };
   let experiment = null;
